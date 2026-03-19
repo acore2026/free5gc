@@ -5,9 +5,9 @@ import (
 
 	"github.com/calee0219/fatal"
 
-	"github.com/free5gc/aper"
-	"github.com/free5gc/ngap/ngapConvert"
-	"github.com/free5gc/ngap/ngapType"
+	"github.com/acore2026/aper"
+	"github.com/acore2026/ngap/ngapConvert"
+	"github.com/acore2026/ngap/ngapType"
 )
 
 // TODO: check test data

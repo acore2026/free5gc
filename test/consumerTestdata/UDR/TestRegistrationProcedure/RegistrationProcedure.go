@@ -1,8 +1,8 @@
 package TestRegistrationProcedure
 
 import (
-	"github.com/free5gc/openapi/models"
-	webui "github.com/free5gc/webconsole/backend/WebUI"
+	"github.com/acore2026/openapi/models"
+	webui "github.com/acore2026/webconsole/backend/WebUI"
 )
 
 const (

@@ -20,24 +20,24 @@ import (
 
 	"github.com/davecgh/go-spew/spew"
 
-	"github.com/free5gc/ike"
-	"github.com/free5gc/ike/message"
-	ike_security "github.com/free5gc/ike/security"
-	"github.com/free5gc/ngap/ngapType"
+	"github.com/acore2026/ike"
+	"github.com/acore2026/ike/message"
+	ike_security "github.com/acore2026/ike/security"
+	"github.com/acore2026/ngap/ngapType"
 
-	ike_message "github.com/free5gc/ike/message"
-	"github.com/free5gc/ike/security/dh"
-	"github.com/free5gc/ike/security/encr"
-	"github.com/free5gc/ike/security/integ"
-	"github.com/free5gc/ike/security/prf"
+	ike_message "github.com/acore2026/ike/message"
+	"github.com/acore2026/ike/security/dh"
+	"github.com/acore2026/ike/security/encr"
+	"github.com/acore2026/ike/security/integ"
+	"github.com/acore2026/ike/security/prf"
 
 	"github.com/acore2026/nas"
 	"github.com/acore2026/nas/nasMessage"
 	"github.com/acore2026/nas/nasType"
 	nasSecurity "github.com/acore2026/nas/security"
-	"github.com/free5gc/ngap"
-	"github.com/free5gc/openapi/models"
-	"github.com/free5gc/util/ueauth"
+	"github.com/acore2026/ngap"
+	"github.com/acore2026/openapi/models"
+	"github.com/acore2026/util/ueauth"
 )
 
 var (

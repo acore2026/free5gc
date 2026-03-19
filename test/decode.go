@@ -2,7 +2,7 @@ package test
 
 import (
 	"github.com/acore2026/nas"
-	"github.com/free5gc/ngap/ngapType"
+	"github.com/acore2026/ngap/ngapType"
 )
 
 func GetNasPdu(ue *RanUeContext, msg *ngapType.DownlinkNASTransport) (m *nas.Message) {

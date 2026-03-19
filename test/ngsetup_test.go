@@ -15,9 +15,9 @@ import (
 	"test/consumerTestdata/UDM/TestGenAuthData"
 
 	"github.com/acore2026/nas/security"
-	"github.com/free5gc/ngap"
-	"github.com/free5gc/openapi/models"
-	"github.com/free5gc/util/mongoapi"
+	"github.com/acore2026/ngap"
+	"github.com/acore2026/openapi/models"
+	"github.com/acore2026/util/mongoapi"
 	"github.com/stretchr/testify/assert"
 )
 

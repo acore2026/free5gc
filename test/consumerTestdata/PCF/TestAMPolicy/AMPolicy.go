@@ -3,7 +3,7 @@ package TestAMPolicy
 import (
 	"time"
 
-	"github.com/free5gc/openapi/models"
+	"github.com/acore2026/openapi/models"
 )
 
 //Data type definition TS 29.571//

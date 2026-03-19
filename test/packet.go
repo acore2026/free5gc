@@ -2,7 +2,7 @@ package test
 
 import (
 
-	// "github.com/free5gc/openapi/models"
+	// "github.com/acore2026/openapi/models"
 
 	"encoding/binary"
 	"fmt"
@@ -11,7 +11,7 @@ import (
 
 	"github.com/acore2026/nas"
 	"github.com/acore2026/nas/nasMessage"
-	"github.com/free5gc/ngap"
+	"github.com/acore2026/ngap"
 )
 
 // This function is used for nas packet

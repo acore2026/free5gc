@@ -10,12 +10,12 @@ import (
 	"test/nasTestpacket"
 	"test/ngapTestpacket"
 
-	"github.com/free5gc/aper"
+	"github.com/acore2026/aper"
 	"github.com/acore2026/nas"
 	"github.com/acore2026/nas/nasMessage"
 	"github.com/acore2026/nas/nasType"
-	"github.com/free5gc/ngap"
-	"github.com/free5gc/ngap/ngapType"
+	"github.com/acore2026/ngap"
+	"github.com/acore2026/ngap/ngapType"
 )
 
 type testEncodeData struct {

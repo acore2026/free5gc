@@ -11,7 +11,7 @@ import (
 	"github.com/acore2026/nas/nasConvert"
 	"github.com/acore2026/nas/nasMessage"
 	"github.com/acore2026/nas/nasType"
-	"github.com/free5gc/openapi/models"
+	"github.com/acore2026/openapi/models"
 )
 
 const (

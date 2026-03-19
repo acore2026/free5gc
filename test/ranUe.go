@@ -17,9 +17,9 @@ import (
 	"github.com/acore2026/nas/nasMessage"
 	"github.com/acore2026/nas/nasType"
 	"github.com/acore2026/nas/security"
-	"github.com/free5gc/openapi/models"
-	"github.com/free5gc/util/ueauth"
-	"github.com/free5gc/webconsole/backend/WebUI"
+	"github.com/acore2026/openapi/models"
+	"github.com/acore2026/util/ueauth"
+	"github.com/acore2026/webconsole/backend/WebUI"
 )
 
 type RanUeContext struct {

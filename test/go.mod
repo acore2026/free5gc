@@ -3,28 +3,28 @@ module test
 go 1.25.5
 
 require (
-	github.com/acore/amf v0.0.0
+	github.com/acore2026/amf v0.0.0
 	github.com/acore2026/nas v0.0.0-20260313070035-3c2891487c8e
 	github.com/antihax/optional v1.0.0
 	github.com/calee0219/fatal v0.0.1
 	github.com/davecgh/go-spew v1.1.1
-	github.com/free5gc/aper v1.1.0
-	github.com/free5gc/ausf v0.0.0
-	github.com/free5gc/bsf v0.0.0
-	github.com/free5gc/chf v1.2.1-0.20260104073217-9fbf02ffd990
-	github.com/free5gc/ike v1.1.1-0.20241014015325-083f89768f43
-	github.com/free5gc/ngap v1.1.2
-	github.com/free5gc/nrf v0.0.0
-	github.com/free5gc/nssf v0.0.0
-	github.com/free5gc/openapi v1.2.3
-	github.com/free5gc/pcf v0.0.0
-	github.com/free5gc/sctp v1.1.1
-	github.com/free5gc/smf v1.4.1-0.20260104075605-df5818d03d12
-	github.com/free5gc/tngf v0.0.0-00010101000000-000000000000
-	github.com/free5gc/udm v0.0.0
-	github.com/free5gc/udr v0.0.0
-	github.com/free5gc/util v1.3.2-0.20260204030658-79d56f347175
-	github.com/free5gc/webconsole v0.0.0
+	github.com/acore2026/aper v1.1.1
+	github.com/acore2026/ausf v0.0.0
+	github.com/acore2026/bsf v0.0.0
+	github.com/acore2026/chf v1.2.2-0.20260104073217-9fbf02ffd990
+	github.com/acore2026/ike v1.1.1-0.20241014015325-083f89768f43
+	github.com/acore2026/ngap v1.1.3
+	github.com/acore2026/nrf v0.0.0
+	github.com/acore2026/nssf v0.0.0
+	github.com/acore2026/openapi v1.2.4
+	github.com/acore2026/pcf v0.0.0
+	github.com/acore2026/sctp v1.1.2
+	github.com/acore2026/smf v1.4.1-0.20260104075605-df5818d03d12
+	github.com/acore2026/tngf v0.0.0-00010101000000-000000000000
+	github.com/acore2026/udm v0.0.0
+	github.com/acore2026/udr v0.0.0
+	github.com/acore2026/util v1.3.2-0.20260204030658-79d56f347175
+	github.com/acore2026/webconsole v0.0.0
 	github.com/gin-gonic/gin v1.10.0
 	github.com/go-ping/ping v1.1.0
 	github.com/google/uuid v1.6.0
@@ -65,9 +65,9 @@ require (
 	github.com/fclairamb/go-log v0.4.1 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
 	github.com/fiorix/go-diameter v3.0.2+incompatible // indirect
-	github.com/free5gc/nas v1.2.2 // indirect
-	github.com/free5gc/pfcp v1.1.1 // indirect
-	github.com/free5gc/tlv v1.1.0 // indirect
+	github.com/acore2026/nas v1.2.3 // indirect
+	github.com/acore2026/pfcp v1.1.2 // indirect
+	github.com/acore2026/tlv v1.1.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
 	github.com/gin-contrib/cors v1.6.0 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
@@ -152,20 +152,20 @@ require (
 )
 
 replace (
-	github.com/acore/amf => ../NFs/amf
-	github.com/free5gc/ausf => ../NFs/ausf
-	github.com/free5gc/bsf => ../NFs/bsf
-	github.com/free5gc/chf => ../NFs/chf
-	github.com/free5gc/n3iwf => ../NFs/n3iwf
-	github.com/free5gc/nrf => ../NFs/nrf
-	github.com/free5gc/nssf => ../NFs/nssf
-	github.com/free5gc/pcf => ../NFs/pcf
-	github.com/free5gc/smf => ../NFs/smf
-	github.com/free5gc/tngf => ../NFs/tngf
-	github.com/free5gc/udm => ../NFs/udm
-	github.com/free5gc/udr => ../NFs/udr
-	github.com/free5gc/upf => ../NFs/upf
-	github.com/free5gc/webconsole => ../webconsole
+	github.com/acore2026/amf => ../NFs/amf
+	github.com/acore2026/ausf => ../NFs/ausf
+	github.com/acore2026/bsf => ../NFs/bsf
+	github.com/acore2026/chf => ../NFs/chf
+	github.com/acore2026/n3iwf => ../NFs/n3iwf
+	github.com/acore2026/nrf => ../NFs/nrf
+	github.com/acore2026/nssf => ../NFs/nssf
+	github.com/acore2026/pcf => ../NFs/pcf
+	github.com/acore2026/smf => ../NFs/smf
+	github.com/acore2026/tngf => ../NFs/tngf
+	github.com/acore2026/udm => ../NFs/udm
+	github.com/acore2026/udr => ../NFs/udr
+	github.com/acore2026/upf => ../NFs/upf
+	github.com/acore2026/webconsole => ../webconsole
 )
 
 replace github.com/acore2026/nas => /home/acore/proj/go/nas

@@ -8,9 +8,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.mongodb.org/mongo-driver/bson"
 
-	"github.com/free5gc/openapi/models"
-	"github.com/free5gc/util/mongoapi"
-	webui "github.com/free5gc/webconsole/backend/WebUI"
+	"github.com/acore2026/openapi/models"
+	"github.com/acore2026/util/mongoapi"
+	webui "github.com/acore2026/webconsole/backend/WebUI"
 )
 
 func toBsonM(data interface{}) bson.M {

@@ -19,7 +19,7 @@ import (
 	"test/consumerTestdata/UDM/TestGenAuthData"
 	"test/nasTestpacket"
 
-	"github.com/free5gc/sctp"
+	"github.com/acore2026/sctp"
 	"github.com/gin-gonic/gin"
 	"github.com/mohae/deepcopy"
 	"github.com/stretchr/testify/assert"
@@ -31,12 +31,12 @@ import (
 	"github.com/acore2026/nas/nasMessage"
 	"github.com/acore2026/nas/nasType"
 	"github.com/acore2026/nas/security"
-	"github.com/free5gc/ngap"
-	"github.com/free5gc/ngap/ngapType"
-	"github.com/free5gc/openapi/models"
-	"github.com/free5gc/openapi/pcf/PolicyAuthorization"
-	"github.com/free5gc/util/httpwrapper"
-	"github.com/free5gc/util/milenage"
+	"github.com/acore2026/ngap"
+	"github.com/acore2026/ngap/ngapType"
+	"github.com/acore2026/openapi/models"
+	"github.com/acore2026/openapi/pcf/PolicyAuthorization"
+	"github.com/acore2026/util/httpwrapper"
+	"github.com/acore2026/util/milenage"
 )
 
 const ranN2Ipv4Addr string = "127.0.0.1"

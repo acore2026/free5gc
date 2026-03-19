@@ -5,7 +5,7 @@ import (
 	"net"
 
 	"github.com/calee0219/fatal"
-	"github.com/free5gc/sctp"
+	"github.com/acore2026/sctp"
 )
 
 const ngapPPID uint32 = 0x3c000000

@@ -16,14 +16,14 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	// ausf_context "github.com/free5gc/ausf/context"
+	// ausf_context "github.com/acore2026/ausf/context"
 	"github.com/acore2026/nas"
 	"github.com/acore2026/nas/nasMessage"
 	"github.com/acore2026/nas/nasType"
 	"github.com/acore2026/nas/security"
-	"github.com/free5gc/ngap"
-	"github.com/free5gc/ngap/ngapType"
-	"github.com/free5gc/openapi/models"
+	"github.com/acore2026/ngap"
+	"github.com/acore2026/ngap/ngapType"
+	"github.com/acore2026/openapi/models"
 )
 
 var ueCount = flag.Int("ueCount", 1, "Number of ue")

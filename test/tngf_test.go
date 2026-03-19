@@ -23,19 +23,19 @@ import (
 	"github.com/vishvananda/netlink"
 	"golang.org/x/sys/unix"
 
-	ike_security "github.com/free5gc/ike/security"
+	ike_security "github.com/acore2026/ike/security"
 	"github.com/acore2026/nas"
 	"github.com/acore2026/nas/nasMessage"
 	"github.com/acore2026/nas/nasType"
 	nasSecurity "github.com/acore2026/nas/security"
-	"github.com/free5gc/openapi/models"
-	"github.com/free5gc/tngf/pkg/context"
-	"github.com/free5gc/tngf/pkg/ike/handler"
-	"github.com/free5gc/tngf/pkg/ike/message"
-	"github.com/free5gc/tngf/pkg/ike/xfrm"
-	radiusHandler "github.com/free5gc/tngf/pkg/radius/handler"
-	radiusMessage "github.com/free5gc/tngf/pkg/radius/message"
-	"github.com/free5gc/util/ueauth"
+	"github.com/acore2026/openapi/models"
+	"github.com/acore2026/tngf/pkg/context"
+	"github.com/acore2026/tngf/pkg/ike/handler"
+	"github.com/acore2026/tngf/pkg/ike/message"
+	"github.com/acore2026/tngf/pkg/ike/xfrm"
+	radiusHandler "github.com/acore2026/tngf/pkg/radius/handler"
+	radiusMessage "github.com/acore2026/tngf/pkg/radius/message"
+	"github.com/acore2026/util/ueauth"
 )
 
 var (

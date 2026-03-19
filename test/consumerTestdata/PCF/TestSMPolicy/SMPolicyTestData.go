@@ -3,7 +3,7 @@ package TestSMPolicy
 import (
 	"time"
 
-	"github.com/free5gc/openapi/models"
+	"github.com/acore2026/openapi/models"
 )
 
 func CreateTestData() models.SmPolicyContextData {
