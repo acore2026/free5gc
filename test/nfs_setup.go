@@ -9,8 +9,8 @@ import (
 	"github.com/free5gc/openapi/models"
 	"github.com/free5gc/udm/pkg/suci"
 
-	amf_factory "github.com/free5gc/amf/pkg/factory"
-	amf_service "github.com/free5gc/amf/pkg/service"
+	amf_factory "github.com/acore/amf/pkg/factory"
+	amf_service "github.com/acore/amf/pkg/service"
 	ausf_factory "github.com/free5gc/ausf/pkg/factory"
 	ausf_service "github.com/free5gc/ausf/pkg/service"
 	bsf_factory "github.com/free5gc/bsf/pkg/factory"

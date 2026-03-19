@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/free5gc/nas"
-	"github.com/free5gc/nas/security"
+	"github.com/acore2026/nas"
+	"github.com/acore2026/nas/security"
 )
 
 func encapNasMsgToEnvelope(nasPDU []byte) []byte {

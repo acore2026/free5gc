@@ -3,16 +3,16 @@ module test
 go 1.25.5
 
 require (
+	github.com/acore/amf v0.0.0
+	github.com/acore2026/nas v0.0.0-20260313070035-3c2891487c8e
 	github.com/antihax/optional v1.0.0
 	github.com/calee0219/fatal v0.0.1
 	github.com/davecgh/go-spew v1.1.1
-	github.com/free5gc/amf v0.0.0
 	github.com/free5gc/aper v1.1.0
 	github.com/free5gc/ausf v0.0.0
 	github.com/free5gc/bsf v0.0.0
 	github.com/free5gc/chf v1.2.1-0.20260104073217-9fbf02ffd990
 	github.com/free5gc/ike v1.1.1-0.20241014015325-083f89768f43
-	github.com/free5gc/nas v1.2.2
 	github.com/free5gc/ngap v1.1.2
 	github.com/free5gc/nrf v0.0.0
 	github.com/free5gc/nssf v0.0.0
@@ -65,6 +65,7 @@ require (
 	github.com/fclairamb/go-log v0.4.1 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
 	github.com/fiorix/go-diameter v3.0.2+incompatible // indirect
+	github.com/free5gc/nas v1.2.2 // indirect
 	github.com/free5gc/pfcp v1.1.1 // indirect
 	github.com/free5gc/tlv v1.1.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
@@ -151,7 +152,7 @@ require (
 )
 
 replace (
-	github.com/free5gc/amf => ../NFs/amf
+	github.com/acore/amf => ../NFs/amf
 	github.com/free5gc/ausf => ../NFs/ausf
 	github.com/free5gc/bsf => ../NFs/bsf
 	github.com/free5gc/chf => ../NFs/chf
@@ -166,3 +167,5 @@ replace (
 	github.com/free5gc/upf => ../NFs/upf
 	github.com/free5gc/webconsole => ../webconsole
 )
+
+replace github.com/acore2026/nas => /home/acore/proj/go/nas
