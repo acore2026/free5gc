@@ -1,7 +1,7 @@
 package test
 
 import (
-	"github.com/free5gc/nas"
+	"github.com/acore2026/nas"
 	"github.com/free5gc/ngap/ngapType"
 )
 

@@ -11,9 +11,9 @@ import (
 	"test/ngapTestpacket"
 
 	"github.com/free5gc/aper"
-	"github.com/free5gc/nas"
-	"github.com/free5gc/nas/nasMessage"
-	"github.com/free5gc/nas/nasType"
+	"github.com/acore2026/nas"
+	"github.com/acore2026/nas/nasMessage"
+	"github.com/acore2026/nas/nasType"
 	"github.com/free5gc/ngap"
 	"github.com/free5gc/ngap/ngapType"
 )
