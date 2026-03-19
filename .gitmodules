@@ -6,13 +6,13 @@
 	url = git@github.com:acore2026/ausf.git
 [submodule "n3iwf"]
 	path = NFs/n3iwf
-	url = https://github.com/free5gc/n3iwf.git
+	url = git@github.com:acore2026/n3iwf.git
 [submodule "nrf"]
 	path = NFs/nrf
 	url = git@github.com:acore2026/nrf.git
 [submodule "nssf"]
 	path = NFs/nssf
-	url = https://github.com/free5gc/nssf.git
+	url = git@github.com:acore2026/nssf.git
 [submodule "pcf"]
 	path = NFs/pcf
 	url = git@github.com:acore2026/pcf.git
@@ -21,25 +21,25 @@
 	url = git@github.com:acore2026/smf.git
 [submodule "udm"]
 	path = NFs/udm
-	url = https://github.com/free5gc/udm.git
+	url = git@github.com:acore2026/udm.git
 [submodule "udr"]
 	path = NFs/udr
-	url = https://github.com/free5gc/udr.git
+	url = git@github.com:acore2026/udr.git
 [submodule "upf"]
 	path = NFs/upf
 	url = git@github.com:acore2026/go-upf.git
 [submodule "webconsole"]
 	path = webconsole
-	url = https://github.com/free5gc/webconsole.git
+	url = git@github.com:acore2026/webconsole.git
 [submodule "chf"]
 	path = NFs/chf
-	url = https://github.com/free5gc/chf.git
+	url = git@github.com:acore2026/chf.git
 [submodule "tngf"]
 	path = NFs/tngf
-	url = https://github.com/free5gc/tngf.git
+	url = git@github.com:acore2026/tngf.git
 [submodule "NFs/nef"]
 	path = NFs/nef
-	url = https://github.com/free5gc/nef.git
+	url = git@github.com:acore2026/nef.git
 [submodule "NFs/bsf"]
 	path = NFs/bsf
-	url = https://github.com/free5gc/bsf.git
+	url = git@github.com:acore2026/bsf.git
