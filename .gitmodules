@@ -4,9 +4,6 @@
 [submodule "ausf"]
 	path = NFs/ausf
 	url = git@github.com:acore2026/ausf.git
-[submodule "n3iwf"]
-	path = NFs/n3iwf
-	url = git@github.com:acore2026/n3iwf.git
 [submodule "nrf"]
 	path = NFs/nrf
 	url = git@github.com:acore2026/nrf.git

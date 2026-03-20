@@ -4,7 +4,6 @@ LOG_PATH="./log/"
 LOG_NAME="free5gc.log"
 TODAY=$(date +"%Y%m%d_%H%M%S")
 PCAP_MODE=0
-N3IWF_ENABLE=0
 TNGF_ENABLE=0
 BSF_ENABLE=0
 
@@ -38,9 +37,6 @@ if [ $# -ne 0 ]; then
             -dp)
                 PCAP_MODE=$((${PCAP_MODE} | 0x02))
                 ;;
-            -n3iwf)
-                N3IWF_ENABLE=1
-                ;;
             -tngf)
                 TNGF_ENABLE=1
                 ;;
@@ -57,7 +53,7 @@ function terminate()
     rm run.pid
     sudo rm -f /tmp/config.json # CHF ChargingGatway FTP config
     echo "Receive SIGINT, terminating..."
-    if [ $N3IWF_ENABLE -ne 0 ] || [ $TNGF_ENABLE -ne 0 ]; then
+    if [ $TNGF_ENABLE -ne 0 ]; then
         sudo ip xfrm state > ${LOG_PATH}NWu_SA_state.log
         sudo ip xfrm state flush
         sudo ip xfrm policy flush
@@ -88,25 +84,13 @@ if [ $PCAP_MODE -ne 0 ]; then
     PCAP=${LOG_PATH}free5gc.pcap
     case $PCAP_MODE in
         1)  # -cp
-            if [ $N3IWF_ENABLE -ne 0 ]; then
-                sudo tcpdump -i any 'sctp port 38412 || tcp port 8000 || udp port 8805 || udp port 500 || udp port 4500' -w ${PCAP} &
-            else
-                sudo tcpdump -i any 'sctp port 38412 || tcp port 8000 || udp port 8805' -w ${PCAP} &
-            fi
+            sudo tcpdump -i any 'sctp port 38412 || tcp port 8000 || udp port 8805' -w ${PCAP} &
             ;;
         2)  # -dp
-            if [ $N3IWF_ENABLE -ne 0 ]; then
-                sudo tcpdump -i any 'udp port 2152 || ip proto 50' -w ${PCAP} &
-            else
-                sudo tcpdump -i any 'udp port 2152' -w ${PCAP} &
-            fi
+            sudo tcpdump -i any 'udp port 2152' -w ${PCAP} &
             ;;
         3)  # include -cp -dp
-            if [ $N3IWF_ENABLE -ne 0 ]; then
-                sudo tcpdump -i any 'sctp port 38412 || tcp port 8000 || udp port 8805 || udp port 500 || udp port 4500 || udp port 2152 || ip proto 50' -w ${PCAP} &
-            else
-                sudo tcpdump -i any 'sctp port 38412 || tcp port 8000 || udp port 8805 || udp port 2152' -w ${PCAP} &
-            fi
+            sudo tcpdump -i any 'sctp port 38412 || tcp port 8000 || udp port 8805 || udp port 2152' -w ${PCAP} &
             ;;
     esac
 
@@ -161,14 +145,6 @@ for NF in ${NF_LIST}; do
     echo "Started ${NF} with PID ${PID}"
     sleep 0.1
 done
-
-if [ $N3IWF_ENABLE -ne 0 ]; then
-    sudo ./bin/n3iwf -c ./config/n3iwfcfg.yaml -l ${LOG_PATH}${LOG_NAME} &
-    SUDO_N3IWF_PID=$!
-    sleep 1
-    N3IWF_PID=$(pgrep -P $SUDO_N3IWF_PID)
-    PID_LIST+=($SUDO_N3IWF_PID $N3IWF_PID)
-fi
 
 if [ $TNGF_ENABLE -ne 0 ]; then
     sudo ./bin/tngf -c ./config/tngfcfg.yaml -l ${LOG_PATH}${LOG_NAME} &

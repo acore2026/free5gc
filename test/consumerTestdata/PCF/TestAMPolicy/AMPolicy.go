@@ -38,7 +38,6 @@ UserLoc :
 			PlmnId :
 				Mnc : Mobile Country Code (466 Taiwan)
 				Mcc : Mobile Network Code (11 CHT)
-			N3IwfId : This IE shall be included if the RAN node belongs to non 3GPP access
 			GNbId :
 				BitLength : 22 to 32, TS38.413
 				GNBValue : Examples:

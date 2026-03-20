@@ -156,7 +156,6 @@ replace (
 	github.com/acore2026/ausf => ../NFs/ausf
 	github.com/acore2026/bsf => ../NFs/bsf
 	github.com/acore2026/chf => ../NFs/chf
-	github.com/acore2026/n3iwf => ../NFs/n3iwf
 	github.com/acore2026/nrf => ../NFs/nrf
 	github.com/acore2026/nssf => ../NFs/nssf
 	github.com/acore2026/pcf => ../NFs/pcf

@@ -49,7 +49,6 @@ func init() {
 						Mcc: "208",
 						Mnc: "93",
 					},
-					N3IwfId: "123",
 					GNbId: &models.GNbId{
 						BitLength: 123,
 						GNBValue:  "string",

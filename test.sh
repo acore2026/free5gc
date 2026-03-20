@@ -29,7 +29,7 @@ do
 done
 shift $(($OPTIND - 1))
 
-TEST_POOL="All|TestRegistration|TestGUTIRegistration|TestServiceRequest|TestXnHandover|TestN2Handover|TestDeregistration|TestPDUSessionReleaseRequest|TestPaging|TestNon3GPP|TestReSynchronization|TestDuplicateRegistration|TestEAPAKAPrimeAuthentication|TestMultiAmfRegistration|TestNasReroute|TestTngf|TestDC|TestDynamicDC|TestXnDCHandover"
+TEST_POOL="All|TestRegistration|TestGUTIRegistration|TestServiceRequest|TestXnHandover|TestN2Handover|TestDeregistration|TestPDUSessionReleaseRequest|TestPaging|TestReSynchronization|TestDuplicateRegistration|TestEAPAKAPrimeAuthentication|TestMultiAmfRegistration|TestNasReroute|TestTngf|TestDC|TestDynamicDC|TestXnDCHandover"
 if [[ ! "$1" =~ $TEST_POOL ]]
 then
     echo "Usage: $0 [ ${TEST_POOL//|/ | } ]"
@@ -50,8 +50,8 @@ if [ $1 == "All" ]; then
             exec $(realpath $0) $i &> testing_output/$i.log &
             wait
             # Extra cleanup for tests that might leave residual processes
-            if [[ "$i" == "TestTngf" || "$i" == "TestNon3GPP" ]]; then
-                sudo killall -9 n3iwf tngf 2>/dev/null
+            if [[ "$i" == "TestTngf" ]]; then
+                sudo killall -9 tngf 2>/dev/null
                 sleep 2
             fi
             STATUS=$(grep -a -E "\-\-\-.*:" testing_output/$i.log)
@@ -94,7 +94,7 @@ function terminate()
     sudo ip netns del ${UPFNS}
     sudo ip addr del 10.60.0.1/32 dev lo
 
-    if [[ "$1" == "TestNon3GPP" || "$1" == "TestTngf" ]]
+    if [[ "$1" == "TestTngf" ]]
     then
         if [ ${DUMP_NS} ]
         then
@@ -103,15 +103,15 @@ function terminate()
         sudo ip xfrm policy flush
         sudo ip xfrm state flush
         sudo ip netns del ${UENS}
-        removeN3iwfInterfaces
+        removeNon3GPPInterfaces
         sudo ip link del veth2
-        # Kill n3iwf and tngf processes more aggressively
-        sudo killall -15 n3iwf tngf 2>/dev/null
+        # Kill tngf processes more aggressively
+        sudo killall -15 tngf 2>/dev/null
         sleep 1
-        sudo killall -9 n3iwf tngf 2>/dev/null
+        sudo killall -9 tngf 2>/dev/null
         sleep 1
         # Also kill any remaining processes by name pattern (including sudo wrapper processes)
-        ps aux | grep -E "[n]3iwf|[t]ngf" | awk '{print $2}' | xargs -r sudo kill -9 2>/dev/null
+        ps aux | grep -E "[t]ngf" | awk '{print $2}' | xargs -r sudo kill -9 2>/dev/null
         # Kill test processes
         ps aux | grep "[t]est.test" | awk '{print $2}' | xargs -r sudo kill -SIGUSR1 2>/dev/null
         sleep 1
@@ -130,7 +130,7 @@ function terminate()
     sleep 5
 }
 
-function removeN3iwfInterfaces()
+function removeNon3GPPInterfaces()
 {
     # Remove all GRE interfaces
     GREs=$(ip link show type gre | awk 'NR%2==1 {print $2}' | cut -d @ -f 1)
@@ -168,21 +168,6 @@ function setupN3ueEnv()
     ${EXEC_UENS} ip addr add 192.168.127.2/24 dev veth3
     ${EXEC_UENS} ip link set lo up
     ${EXEC_UENS} ip link set veth3 up
-}
-
-function tcpdumpN3IWF()
-{
-    N3IWF_IPSec_iface_addr=192.168.127.1
-    N3IWF_IPsec_inner_addr=10.0.0.1
-    N3IWF_GTP_addr=10.200.200.2
-    UE_DN_addr=10.60.0.1
-
-    ${EXEC_UENS} tcpdump -U -i any -w $PCAP_PATH/$UENS.pcap &
-    TCPDUMP_QUERY=" host $N3IWF_IPSec_iface_addr or \
-                    host $N3IWF_IPsec_inner_addr or \
-                    host $N3IWF_GTP_addr or \
-                    host $UE_DN_addr"
-    sudo -E tcpdump -U -i any $TCPDUMP_QUERY -w $PCAP_PATH/n3iwf.pcap &
 }
 
 # Setup network namespace
@@ -228,28 +213,7 @@ fi
 ${EXEC_UPFNS} ./bin/upf -c ./config/upfcfg.test.yaml &
 sleep 2
 
-if [[ "$1" == "TestNon3GPP" ]]
-then
-    removeN3iwfInterfaces
-    # setup N3UE's namespace, interfaces for IPsec
-    setupN3ueEnv
-    if [ ${DUMP_NS} ]
-    then
-        tcpdumpN3IWF
-    fi
-
-    # Run CN
-    cd test && $GOROOT/bin/go test -v -vet=off -timeout 0 -run TestCN &
-    sleep 10
-
-    # Run N3IWF
-    sudo -E ./bin/n3iwf -c ./config/n3iwfcfg.test.yaml &
-    sleep 5
-
-    # Run Test UE
-    cd test
-    ${EXEC_UENS} $GOROOT/bin/go test -v -vet=off -timeout 0 -run TestNon3GPPUE -args noinit $2
-elif [[ "$1" == "TestMultiAmfRegistration" ]]
+if [[ "$1" == "TestMultiAmfRegistration" ]]
 then
     make amf
 
@@ -275,7 +239,7 @@ then
     $GOROOT/bin/go test -v -vet=off -run TestNasReroute -args multiAmf $2
 elif [[ "$1" == "TestTngf" ]]
 then
-    removeN3iwfInterfaces
+    removeNon3GPPInterfaces
     # setup TNGFUE's namespace, interfaces for IPsec
     setupN3ueEnv
 
@@ -293,9 +257,6 @@ then
 else
     cd test
     $GOROOT/bin/go test -v -vet=off -run $1 -args $2
-    # LOG_FILE="test_output_${1}.log"
-    # $GOROOT/bin/go test -v -vet=off -run $1 -args $2 > $LOG_FILE
-    # echo "Test output saved to $LOG_FILE"
 fi
 
 terminate $1
