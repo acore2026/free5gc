@@ -40,3 +40,6 @@
 [submodule "NFs/bsf"]
 	path = NFs/bsf
 	url = git@github.com:acore2026/bsf.git
+[submodule "ueransim-go"]
+	path = ueransim-go
+	url = git@github.com:acore2026/ueransim-go.git
